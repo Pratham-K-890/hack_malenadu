@@ -20,7 +20,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(levelname)s  %(me
 log = logging.getLogger("orbital")
 
 ROOT        = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-NODE_URL    = "http://localhost:3000"
+NODE_URL = os.environ.get("NODE_URL", "http://localhost:3000")
 MACHINE_IDS = ["CNC_01", "CNC_02", "PUMP_03", "CONVEYOR_04"]
 SENSORS     = ["temperature_C", "vibration_mm_s", "rpm", "current_A"]
 BUFFER_SIZE = 120
